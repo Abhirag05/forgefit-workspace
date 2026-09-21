@@ -1,18 +1,15 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { PublicLayout } from '@/layouts/PublicLayout';
 import { LandingPage } from '@/features/landing/LandingPage';
 
 export const AppRoutes: React.FC = () => {
   return (
     <Routes>
-      {/* Public Landing Page */}
-      <Route path="/" element={<LandingPage />} />
-
-      {/* Future routes will plug in here cleanly:
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
-      */}
+      {/* Public Routes with shared Navbar & Footer */}
+      <Route element={<PublicLayout />}>
+        <Route path="/" element={<LandingPage />} />
+      </Route>
     </Routes>
   );
 };
