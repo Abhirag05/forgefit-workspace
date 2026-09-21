@@ -25,27 +25,27 @@ Key UI characteristics:
 ForgeFit utilizes Tailwind CSS v4 colors mapped to consistent semantic tokens:
 
 ### 2.1 Surfaces & Backgrounds
-| Token | Hex Value | Tailwind Class | Usage |
-| :--- | :--- | :--- | :--- |
-| **Canvas Background** | `#09090b` | `bg-zinc-950` | Primary page background |
-| **Surface (Card / Panel)**| `#18181b` | `bg-zinc-900` | Card, sidebar, modal, dropdown container |
-| **Elevated Surface** | `#27272a` | `bg-zinc-800` | Hover states, active list items, input fields |
-| **Border / Divider** | `#27272a` | `border-zinc-800` | Subtle borders, table separators |
-| **Subtle Border** | `#3f3f46` | `border-zinc-700` | Card hover borders, focused input rings |
+| Token | Hex Value | Usage |
+| :--- | :--- | :--- |
+| **Canvas Background** | `#0a0a12` | Deep midnight canvas background |
+| **Glass Panel / Card** | `rgba(255, 255, 255, 0.04)` | Glassmorphic cards with `backdrop-blur-md` |
+| **Hover Card** | `rgba(255, 255, 255, 0.08)` | Hover elevation surface |
+| **Border / Divider** | `rgba(255, 255, 255, 0.08)` | Subtle glass borders |
+| **Glowing Border** | `rgba(255, 77, 77, 0.20)` | Active card hover with crimson glow |
 
-### 2.2 Functional Accents
-| Metric / Feature | Accent Name | Primary Hex | Tailwind Classes |
+### 2.2 Signature Functional Accents
+| Metric / Feature | Accent Name | Primary Hex | Usage |
 | :--- | :--- | :--- | :--- |
-| **Workouts & XP** | Emerald | `#10b981` | `text-emerald-400`, `bg-emerald-500`, `border-emerald-500/30` |
-| **Hydration / Water** | Cyan / Sky | `#06b6d4` | `text-cyan-400`, `bg-cyan-500`, `border-cyan-500/30` |
-| **Nutrition / Calories**| Amber | `#f59e0b` | `text-amber-400`, `bg-amber-500`, `border-amber-500/30` |
-| **Destructive / Error** | Rose / Red | `#ef4444` | `text-rose-400`, `bg-rose-500`, `border-rose-500/30` |
-| **AI Fitness Coach** | Violet / Purple | `#8b5cf6` | `text-violet-400`, `bg-violet-500`, `border-violet-500/30` |
+| **Primary Brand / Action** | Electric Crimson | `#ff4d4d` | Primary buttons, active highlights, flame energy |
+| **Gamification / Ranks** | Cyber Purple | `#6a00ff` | XP badges, Level progression, secondary buttons |
+| **Hydration / Water** | Electric Cyan | `#00f0ff` | Water tracking, glass counters, hydration target |
+| **Nutrition / Calories** | Amber Gold | `#f59e0b` | Calorie counts, macro breakdown |
+| **AI Fitness Coach** | Violet / Purple | `#6a00ff` | Gemini AI coaching interface |
 
 ### 2.3 Typography & Text Colors
 | Role | Tailwind Class | Appearance |
 | :--- | :--- | :--- |
-| **Primary Text** | `text-zinc-100` | High-contrast headings and primary values |
+| **Primary Text** | `text-white` | High-contrast headings and primary values |
 | **Secondary Text** | `text-zinc-400` | Subtitles, descriptions, secondary stats |
 | **Muted Text** | `text-zinc-500` | Helper text, disabled states, timestamps |
 
@@ -53,11 +53,11 @@ ForgeFit utilizes Tailwind CSS v4 colors mapped to consistent semantic tokens:
 
 ## 3. Typography Scale
 
-ForgeFit uses clean sans-serif typography (`Inter`, `system-ui`).
+ForgeFit uses athletic, geometric sans-serif typography (**`Poppins`**, `sans-serif`).
 
-- **Display / Metric Header:** `text-3xl font-extrabold tracking-tight` (e.g., "2,450 kcal", "Level 12")
-- **Page Title:** `text-2xl font-bold text-zinc-100` (e.g., "Workout Tracker")
-- **Section Heading:** `text-lg font-semibold text-zinc-200` (e.g., "Today's Logged Sets")
+- **Display / Metric Header:** `text-4xl sm:text-6xl font-extrabold tracking-tight`
+- **Page Title:** `text-2xl sm:text-3xl font-bold text-white`
+- **Section Heading:** `text-lg sm:text-xl font-semibold text-zinc-100`
 - **Body Regular:** `text-sm font-normal text-zinc-300` (General body copy and inputs)
 - **Caption / Badge:** `text-xs font-medium uppercase tracking-wider text-zinc-400` (Tags, muscle groups)
 
@@ -142,29 +142,23 @@ To ensure exact consistency across all UI features, the frontend uses the follow
 
 @theme {
   /* Font Family */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  /* Functional Accents */
-  --color-brand-emerald: #10b981;
-  --color-brand-cyan: #06b6d4;
-  --color-brand-amber: #f59e0b;
-  --color-brand-rose: #ef4444;
-  --color-brand-violet: #8b5cf6;
-
-  /* Dark Surface Scale */
-  --color-surface-canvas: #09090b;   /* zinc-950 */
-  --color-surface-card: #18181b;     /* zinc-900 */
-  --color-surface-elevated: #27272a; /* zinc-800 */
-  --color-surface-border: #27272a;   /* border-zinc-800 */
-  --color-surface-border-subtle: #3f3f46; /* border-zinc-700 */
+  /* Signature ForgeFit Athletic Colors */
+  --color-forge-red: #ff4d4d;
+  --color-forge-purple: #6a00ff;
+  --color-forge-cyan: #00f0ff;
+  --color-forge-dark: #0a0a12;
+  --color-forge-card: rgba(255, 255, 255, 0.04);
+  --color-forge-border: rgba(255, 77, 77, 0.15);
 }
 ```
 
 ### Font Loading Standard (`index.html`)
-The application uses Google Fonts `Inter` (weights: 400, 500, 600, 700, 800) loaded via standard preconnect tags:
+The application uses Google Fonts `Poppins` (weights: 300, 400, 500, 600, 700, 800) loaded via standard preconnect tags:
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 ```
 
