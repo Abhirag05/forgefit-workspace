@@ -4,19 +4,21 @@ This document establishes the UI design language, color palette, typography, com
 
 ---
 
-## 1. Design Philosophy
+## 1. Design Philosophy: Solo Leveling "The System" Aesthetic
 
-ForgeFit is built with a **modern, athletic, dark-mode-first aesthetic** inspired by cutting-edge fitness platforms (such as Whoop, Gymshark, and Apple Fitness).
+ForgeFit is built with a **dark-mode, RPG-inspired athletic aesthetic modeled after the "System Window" from the anime *Solo Leveling*** (*Na Honjamanman Rebeleop*), merged with cutting-edge fitness telemetry.
 
-Key UI characteristics:
-- **Dark Canvas:** Deep slate and zinc backgrounds provide high visual contrast, reduce eye strain, and give a sleek performance feel.
-- **Vibrant Functional Accents:** Color is used intentionally to communicate health metrics:
-  - **Emerald Green:** Health, workout progress, active streaks, XP gains.
-  - **Electric Cyan / Blue:** Hydration, water intake, informational badges.
-  - **Amber / Orange:** Nutrition, calories consumed, warm-ups.
-  - **Crimson Red:** High heart rates, personal records (PRs), destructive actions, errors.
-- **Tactile & Responsive:** Smooth hover states, subtle micro-interactions, clean cards, and clear typography.
-- **Mobile-First Utility:** Gym-goers log sets on mobile screens with one hand; tap targets must be at least `44px` high with clear touch feedback.
+The user experience treats everyday fitness as a hunter’s awakening journey—transforming workout and nutrition logging into personal progression:
+
+### Key Aesthetic Tenets:
+- **The "Player HUD" & Holographic Windows:** All primary panels, cards, and modals feel like floating, semi-translucent quest and status windows granted by "The System" (`glass-panel` with subtle neon edge glow).
+- **Abyssal Void Canvas:** Deep midnight/pitch black (`#0a0a12` / `#050508`) canvas symbolizing the dungeon depths and shadow domain.
+- **Mana & Monarch Glows:**
+  - **Mana Cyan (`#00f0ff`):** Used for "System" prompts, hydration telemetry, level-up notifications, and floating quest completions.
+  - **Shadow Monarch Purple (`#6a00ff`):** Used for XP progress bars, rank badges (E-Rank to S-Rank), and mystical aura glows.
+  - **Penalty / Blood Crimson (`#ff4d4d`):** Used for high-intensity workouts, primary action triggers, critical PR alerts, and failure/penalty states.
+- **Sharply Defined Visual Hierarchy:** High contrast, sharp geometric corners with subtle rounded bevels (`rounded-xl` / `rounded-2xl`), intense neon glows (`box-shadow: 0 0 20px rgba(...)`), and clear tactical typography.
+- **Tactile Gamification:** Every action (logging a set, drinking water, hitting calorie goals) provides tactile visual feedback reminiscent of completing a daily quest.
 
 ---
 
@@ -33,14 +35,14 @@ ForgeFit utilizes Tailwind CSS v4 colors mapped to consistent semantic tokens:
 | **Border / Divider** | `rgba(255, 255, 255, 0.08)` | Subtle glass borders |
 | **Glowing Border** | `rgba(255, 77, 77, 0.20)` | Active card hover with crimson glow |
 
-### 2.2 Signature Functional Accents
-| Metric / Feature | Accent Name | Primary Hex | Usage |
+### 2.2 Signature Functional Accents (Solo Leveling System Mapping)
+| Metric / Feature | Solo Leveling Theme | Primary Hex | Usage |
 | :--- | :--- | :--- | :--- |
-| **Primary Brand / Action** | Electric Crimson | `#ff4d4d` | Primary buttons, active highlights, flame energy |
-| **Gamification / Ranks** | Cyber Purple | `#6a00ff` | XP badges, Level progression, secondary buttons |
-| **Hydration / Water** | Electric Cyan | `#00f0ff` | Water tracking, glass counters, hydration target |
-| **Nutrition / Calories** | Amber Gold | `#f59e0b` | Calorie counts, macro breakdown |
-| **AI Fitness Coach** | Violet / Purple | `#6a00ff` | Gemini AI coaching interface |
+| **Primary Action / Intensity** | Penalty / Blood Crimson | `#ff4d4d` | Primary buttons, active highlights, intense PR workouts |
+| **Gamification / Ranks** | Shadow Monarch Purple | `#6a00ff` | XP badges, Level progression, Hunter Ranks (E to S) |
+| **Hydration / System Prompts** | Mana Cyan / HUD Blue | `#00f0ff` | System notices, hydration telemetry, quest clears |
+| **Nutrition / Fuel** | Dungeon Core Amber | `#f59e0b` | Calorie intake, macro energy breakdown |
+| **AI Fitness Coach** | Sovereign Violet | `#6a00ff` | Gemini AI coach (The "System" Voice) |
 
 ### 2.3 Typography & Text Colors
 | Role | Tailwind Class | Appearance |
