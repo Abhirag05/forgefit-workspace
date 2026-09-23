@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/Button';
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center overflow-hidden px-4 text-center sm:px-6 lg:px-8">
+    <section id="hero" className="relative flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center overflow-hidden px-4 text-center sm:px-6 lg:px-8">
       {/* Subtle Purple & Pink Ambient Glows */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#8a2387]/15 blur-3xl" />
       <div className="pointer-events-none absolute top-1/3 left-1/3 -z-10 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff416c]/10 blur-3xl" />

@@ -16,10 +16,10 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-[#07060f]/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Brand Logo matching Screenshot 1 */}
-        <Link to="/" className="text-xl font-black tracking-widest text-white hover:opacity-90">
+        {/* Brand Logo  */}
+        <a href="#hero" className="text-xl font-black tracking-widest text-white hover:opacity-90">
           FORGEFIT
-        </Link>
+        </a>
 
         {/* Center Nav Links */}
         <nav aria-label="Main Navigation" className="hidden items-center md:flex">
