@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowRight, Sparkles, Trophy, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 

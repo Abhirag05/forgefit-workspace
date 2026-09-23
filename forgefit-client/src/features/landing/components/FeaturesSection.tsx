@@ -1,8 +1,8 @@
-import React from 'react';
+import type { ComponentType } from 'react';
 import { Dumbbell, Utensils, Droplets, Bot } from 'lucide-react';
 
 interface FeatureItem {
-  icon: React.ComponentType<{ className?: string }>;
+  icon: ComponentType<{ className?: string }>;
   title: string;
   description: string;
   badge: string;
