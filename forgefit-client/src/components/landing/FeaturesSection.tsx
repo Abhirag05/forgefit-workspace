@@ -1,7 +1,15 @@
+import type { ComponentType } from 'react';
 import { Dumbbell, Utensils, Droplets, Bot } from 'lucide-react';
-import { FeatureCard, type FeatureCardProps } from './FeatureCard';
+import { Card } from '@/components/ui/Card';
 
-const features: FeatureCardProps[] = [
+interface FeatureItem {
+  id: string;
+  icon: ComponentType<{ className?: string }>;
+  title: string;
+  description: string;
+}
+
+const features: FeatureItem[] = [
   {
     id: 'workouts',
     icon: Dumbbell,
@@ -32,6 +40,23 @@ const features: FeatureCardProps[] = [
   },
 ];
 
+// Colocated FeatureCard helper
+function FeatureCard({ id, icon: Icon, title, description }: FeatureItem) {
+  return (
+    <Card id={id} hoverEffect className="group scroll-mt-24">
+      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 border border-white/10 group-hover:border-[#ff416c]/40 transition-colors">
+        <Icon className="h-6 w-6 text-white" />
+      </div>
+      <h3 className="mt-5 text-lg font-bold text-white">
+        {title}
+      </h3>
+      <p className="mt-2 text-xs leading-relaxed text-zinc-400 sm:text-sm">
+        {description}
+      </p>
+    </Card>
+  );
+}
+
 export function FeaturesSection() {
   return (
     <section id="features" className="relative py-24 scroll-mt-16">
@@ -45,7 +70,6 @@ export function FeaturesSection() {
           </p>
         </div>
 
-        {/* Clean, readable grid mapping over FeatureCard */}
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature) => (
             <FeatureCard key={feature.id} {...feature} />

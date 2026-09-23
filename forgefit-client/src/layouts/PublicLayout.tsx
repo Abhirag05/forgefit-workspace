@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
-import { Navbar } from '@/features/landing/components/Navbar';
-import { Footer } from '@/features/landing/components/Footer';
+import { Navbar } from '@/components/landing/Navbar';
+import { Footer } from '@/components/landing/Footer';
 
 export function PublicLayout() {
   return (

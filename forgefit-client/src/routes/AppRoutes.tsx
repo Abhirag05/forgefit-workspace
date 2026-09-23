@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { PublicLayout } from '@/layouts/PublicLayout';
-import { LandingPage } from '@/features/landing/LandingPage';
+import { LandingPage } from '@/pages/LandingPage';
 
 export function AppRoutes() {
   return (

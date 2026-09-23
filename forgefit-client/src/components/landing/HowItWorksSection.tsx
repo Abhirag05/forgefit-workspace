@@ -52,7 +52,6 @@ export function HowItWorksSection() {
           </p>
         </div>
 
-        {/* Unified Card grid */}
         <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((item) => {
             const Icon = item.icon;

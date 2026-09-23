@@ -35,14 +35,14 @@ export function ContactSection() {
           <div className="flex flex-col justify-between space-y-4 lg:col-span-4">
             <Card hoverEffect>
               <div className="flex items-center gap-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5">
                   <Mail className="h-5 w-5 text-[#ff416c]" />
                 </div>
                 <div>
                   <h3 className="text-sm font-bold text-white">Email Inquiries</h3>
                   <a
                     href="mailto:support@forgefit.app"
-                    className="mt-0.5 block text-xs text-zinc-400 hover:text-white transition-colors"
+                    className="mt-0.5 block text-xs text-zinc-400 transition-colors hover:text-white"
                   >
                     support@forgefit.app
                   </a>
@@ -52,7 +52,7 @@ export function ContactSection() {
 
             <Card hoverEffect>
               <div className="flex items-center gap-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5">
                   <MessageSquare className="h-5 w-5 text-[#7928ca]" />
                 </div>
                 <div>

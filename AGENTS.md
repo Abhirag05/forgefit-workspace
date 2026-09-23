@@ -98,9 +98,11 @@ forgefit-workspace/
 
 1. **Strict TypeScript:**
    - No `any` types. All models in `src/types/` must match the corresponding Spring Boot DTOs.
-2. **Feature-Driven Structure:**
+2. **Feature & Page Architecture:**
    - Keep domain components, hooks, and services co-located in `src/features/<domain>/`.
-   - Reusable generic elements belong in `src/components/common/`.
+   - Reusable generic UI primitives (`Button`, `Card`, `Input`, etc.) belong in `src/components/ui/`.
+   - Landing page sections belong in `src/components/landing/`.
+   - Top-level routed views belong in `src/pages/`.
 3. **Clean Component Architecture:**
    - Separate UI presentation from side-effects and data-fetching.
    - Extract complex state and API orchestration into custom hooks.
