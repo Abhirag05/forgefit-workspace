@@ -2,6 +2,7 @@ import type { ComponentType } from 'react';
 import { Dumbbell, Utensils, Droplets, Bot } from 'lucide-react';
 
 interface FeatureItem {
+  id: string;
   icon: ComponentType<{ className?: string }>;
   title: string;
   description: string;
@@ -12,6 +13,7 @@ interface FeatureItem {
 
 const features: FeatureItem[] = [
   {
+    id: 'workouts',
     icon: Dumbbell,
     title: 'Precision Workout Logging',
     description:
@@ -21,6 +23,7 @@ const features: FeatureItem[] = [
     accentBorder: 'hover:border-[#ff4d4d]/40',
   },
   {
+    id: 'nutrition',
     icon: Utensils,
     title: 'Nutrition & Macro Tracker',
     description:
@@ -30,6 +33,7 @@ const features: FeatureItem[] = [
     accentBorder: 'hover:border-amber-500/40',
   },
   {
+    id: 'hydration',
     icon: Droplets,
     title: 'Smart Hydration Logging',
     description:
@@ -39,6 +43,7 @@ const features: FeatureItem[] = [
     accentBorder: 'hover:border-[#00f0ff]/40',
   },
   {
+    id: 'ai-coach',
     icon: Bot,
     title: 'AI Fitness Coach',
     description:
@@ -51,7 +56,7 @@ const features: FeatureItem[] = [
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="relative py-20">
+    <section id="features" className="relative py-20 scroll-mt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-xs font-semibold uppercase tracking-widest text-[#ff4d4d]">
@@ -71,7 +76,8 @@ export function FeaturesSection() {
             return (
               <div
                 key={feature.title}
-                className={`glass-panel group relative flex flex-col justify-between rounded-2xl p-6 transition-all duration-300 ${feature.accentBorder} hover:-translate-y-1`}
+                id={feature.id}
+                className={`glass-panel group relative flex flex-col justify-between rounded-2xl p-6 transition-all duration-300 scroll-mt-24 ${feature.accentBorder} hover:-translate-y-1`}
               >
                 <div>
                   <div className="flex items-center justify-between">
