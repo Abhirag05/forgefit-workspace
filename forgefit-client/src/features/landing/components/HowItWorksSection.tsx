@@ -1,4 +1,5 @@
 import { Activity, Dumbbell, Trophy, Bot } from 'lucide-react';
+import { Card } from '@/components/ui/Card';
 
 interface StepItem {
   step: string;
@@ -51,14 +52,12 @@ export function HowItWorksSection() {
           </p>
         </div>
 
+        {/* Unified Card grid */}
         <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((item) => {
             const Icon = item.icon;
             return (
-              <div
-                key={item.step}
-                className="glass-panel group rounded-2xl p-6 transition-all duration-300 hover:border-[#8a2387]/60 hover:-translate-y-1"
-              >
+              <Card key={item.step} hoverEffect className="group">
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-2xl font-bold text-white/20 group-hover:text-[#ff416c] transition-colors">
                     {item.step}
@@ -74,7 +73,7 @@ export function HowItWorksSection() {
                 <p className="mt-2 text-xs leading-relaxed text-zinc-400 sm:text-sm">
                   {item.description}
                 </p>
-              </div>
+              </Card>
             );
           })}
         </div>

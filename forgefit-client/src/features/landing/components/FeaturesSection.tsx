@@ -1,14 +1,7 @@
-import type { ComponentType } from 'react';
 import { Dumbbell, Utensils, Droplets, Bot } from 'lucide-react';
+import { FeatureCard, type FeatureCardProps } from './FeatureCard';
 
-interface FeatureItem {
-  id: string;
-  icon: ComponentType<{ className?: string }>;
-  title: string;
-  description: string;
-}
-
-const features: FeatureItem[] = [
+const features: FeatureCardProps[] = [
   {
     id: 'workouts',
     icon: Dumbbell,
@@ -52,27 +45,11 @@ export function FeaturesSection() {
           </p>
         </div>
 
+        {/* Clean, readable grid mapping over FeatureCard */}
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={feature.title}
-                id={feature.id}
-                className="glass-panel group rounded-2xl p-6 transition-all duration-300 hover:border-[#8a2387]/60 hover:-translate-y-1 scroll-mt-24"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 border border-white/10 group-hover:border-[#ff416c]/40 transition-colors">
-                  <Icon className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="mt-5 text-lg font-bold text-white">
-                  {feature.title}
-                </h3>
-                <p className="mt-2 text-xs leading-relaxed text-zinc-400 sm:text-sm">
-                  {feature.description}
-                </p>
-              </div>
-            );
-          })}
+          {features.map((feature) => (
+            <FeatureCard key={feature.id} {...feature} />
+          ))}
         </div>
       </div>
     </section>

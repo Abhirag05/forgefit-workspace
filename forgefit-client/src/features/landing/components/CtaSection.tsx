@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
+import { Card } from '@/components/ui/Card';
 
 export function CtaSection() {
   return (
     <section className="relative py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="glass-panel relative overflow-hidden rounded-3xl p-10 sm:p-16 text-center">
+        <Card className="relative overflow-hidden rounded-3xl p-10 sm:p-16 text-center">
           <div className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-[#ff416c]/15 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-[#8a2387]/15 blur-3xl" />
 
@@ -24,7 +25,7 @@ export function CtaSection() {
               </Button>
             </Link>
           </div>
-        </div>
+        </Card>
       </div>
     </section>
   );

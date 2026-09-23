@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react';
 import { Mail, MessageSquare, Send, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { Card } from '@/components/ui/Card';
 
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
@@ -30,9 +31,9 @@ export function ContactSection() {
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-12">
-          {/* Info Side (4 cols) */}
+          {/* Info Side (4 cols) using Card primitive */}
           <div className="flex flex-col justify-between space-y-4 lg:col-span-4">
-            <div className="glass-panel rounded-2xl p-6">
+            <Card hoverEffect>
               <div className="flex items-center gap-4">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10">
                   <Mail className="h-5 w-5 text-[#ff416c]" />
@@ -47,9 +48,9 @@ export function ContactSection() {
                   </a>
                 </div>
               </div>
-            </div>
+            </Card>
 
-            <div className="glass-panel rounded-2xl p-6">
+            <Card hoverEffect>
               <div className="flex items-center gap-4">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10">
                   <MessageSquare className="h-5 w-5 text-[#7928ca]" />
@@ -61,11 +62,11 @@ export function ContactSection() {
                   </p>
                 </div>
               </div>
-            </div>
+            </Card>
           </div>
 
-          {/* Form Side (8 cols) */}
-          <div className="glass-panel rounded-2xl p-8 lg:col-span-8">
+          {/* Form Side (8 cols) using Card primitive */}
+          <Card className="p-8 sm:p-10 lg:col-span-8">
             {submitted ? (
               <div className="flex flex-col items-center justify-center py-10 text-center">
                 <CheckCircle2 className="h-12 w-12 text-[#ff416c]" />
@@ -164,7 +165,7 @@ export function ContactSection() {
                 </Button>
               </form>
             )}
-          </div>
+          </Card>
         </div>
       </div>
     </section>
