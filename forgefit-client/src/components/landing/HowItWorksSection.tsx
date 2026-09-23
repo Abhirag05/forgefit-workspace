@@ -39,6 +39,29 @@ const steps: StepItem[] = [
   },
 ];
 
+// Colocated StepCard helper
+function StepCard({ step, title, description, icon: Icon }: StepItem) {
+  return (
+    <Card hoverEffect className="group">
+      <div className="flex items-center justify-between">
+        <span className="font-mono text-2xl font-bold text-white/20 transition-colors group-hover:text-[#ff416c]">
+          {step}
+        </span>
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5">
+          <Icon className="h-5 w-5 text-white" />
+        </div>
+      </div>
+
+      <h3 className="mt-6 text-base font-bold text-white">
+        {title}
+      </h3>
+      <p className="mt-2 text-xs leading-relaxed text-zinc-400 sm:text-sm">
+        {description}
+      </p>
+    </Card>
+  );
+}
+
 export function HowItWorksSection() {
   return (
     <section id="how-it-works" className="relative py-24 scroll-mt-16">
@@ -53,28 +76,9 @@ export function HowItWorksSection() {
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {steps.map((item) => {
-            const Icon = item.icon;
-            return (
-              <Card key={item.step} hoverEffect className="group">
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-2xl font-bold text-white/20 group-hover:text-[#ff416c] transition-colors">
-                    {item.step}
-                  </span>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10">
-                    <Icon className="h-5 w-5 text-white" />
-                  </div>
-                </div>
-
-                <h3 className="mt-6 text-base font-bold text-white">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-xs leading-relaxed text-zinc-400 sm:text-sm">
-                  {item.description}
-                </p>
-              </Card>
-            );
-          })}
+          {steps.map((item) => (
+            <StepCard key={item.step} {...item} />
+          ))}
         </div>
       </div>
     </section>
