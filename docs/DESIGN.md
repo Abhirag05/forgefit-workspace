@@ -20,6 +20,13 @@ The user experience treats everyday fitness as a hunter’s awakening journey—
 - **Sharply Defined Visual Hierarchy:** High contrast, sharp geometric corners with subtle rounded bevels (`rounded-xl` / `rounded-2xl`), intense neon glows (`box-shadow: 0 0 20px rgba(...)`), and clear tactical typography.
 - **Tactile Gamification:** Every action (logging a set, drinking water, hitting calorie goals) provides tactile visual feedback reminiscent of completing a daily quest.
 
+### Anti-Patterns: No Generic "Vibe-Coded" UI
+- Do not add emojis, decorative symbols, or playful icon substitutes to make the interface feel expressive. Use Lucide icons and purposeful System terminology instead.
+- Do not use arbitrary gradients, rainbow palettes, unrelated accent colors, pastel surfaces, or color combinations that are not defined in this document. Color must communicate a product state or metric within the System theme.
+- Do not copy generic AI-generated SaaS patterns such as oversized hero copy, meaningless pill badges, excessive rounded cards, decorative blobs, stock imagery, or empty glassmorphism.
+- Do not add visual effects merely because they are fashionable. Glows, blur, animation, borders, and background treatments must reinforce hierarchy, status, telemetry, or interaction feedback.
+- When a design choice is not covered here, prefer restraint and extend the existing System Window language rather than introducing a new visual style.
+
 ---
 
 ## 2. Color Palette & Design Tokens

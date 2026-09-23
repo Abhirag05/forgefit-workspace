@@ -3,7 +3,7 @@ import { Loader2 } from 'lucide-react';
 import { cn } from '@/utils/cn';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive';
+  variant?: 'gradient' | 'outline' | 'secondary' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   isLoading?: boolean;
 }
@@ -12,7 +12,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       className,
-      variant = 'primary',
+      variant = 'gradient',
       size = 'md',
       isLoading = false,
       disabled,
@@ -21,29 +21,28 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    // Base styles applied to every button
     const baseStyles =
-      'inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff4d4d]/50 disabled:pointer-events-none disabled:opacity-50 select-none cursor-pointer';
+      'inline-flex items-center justify-center font-medium rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff416c]/50 disabled:pointer-events-none disabled:opacity-50 select-none cursor-pointer';
 
-    // Variant styles matching ForgeFit signature palette
     const variants = {
-      primary:
-        'bg-[#ff4d4d] text-white hover:bg-[#ff3333] shadow-lg shadow-[#ff4d4d]/25 font-semibold active:scale-[0.98]',
-      secondary:
-        'bg-[#6a00ff] text-white hover:bg-[#7b1aff] shadow-lg shadow-[#6a00ff]/25 font-semibold active:scale-[0.98]',
+      // Pink to Violet gradient with glow from Screenshot 1
+      gradient:
+        'bg-gradient-to-r from-[#ff416c] to-[#8a2387] text-white shadow-lg shadow-[#ff416c]/25 hover:opacity-95 active:scale-[0.98]',
+      // Pill outline from Screenshot 1 Sign In button
       outline:
-        'border border-white/15 text-zinc-200 hover:border-[#ff4d4d]/50 hover:bg-white/5 hover:text-white active:scale-[0.98]',
+        'border border-[#ff416c]/60 text-white hover:bg-[#ff416c]/10 active:scale-[0.98]',
+      // Purple solid from Screenshot 2 / 3
+      secondary:
+        'bg-[#7928ca] text-white hover:bg-[#6a00ff] shadow-md shadow-[#7928ca]/20 active:scale-[0.98]',
+      // Subtle ghost
       ghost:
-        'text-zinc-400 hover:text-white hover:bg-white/5 active:scale-[0.98]',
-      destructive:
-        'bg-rose-600 text-white hover:bg-rose-700 shadow-lg shadow-rose-600/25 active:scale-[0.98]',
+        'text-zinc-300 hover:text-white hover:bg-white/5 active:scale-[0.98]',
     };
 
-    // Size styles
     const sizes = {
-      sm: 'h-9 px-3 text-xs rounded-lg gap-1.5',
-      md: 'h-10 px-4 text-sm rounded-xl gap-2',
-      lg: 'h-12 px-6 text-base rounded-xl gap-2.5 font-semibold',
+      sm: 'h-9 px-4 text-xs gap-1.5',
+      md: 'h-10 px-6 text-sm gap-2',
+      lg: 'h-12 px-8 text-base gap-2.5 font-semibold',
     };
 
     return (

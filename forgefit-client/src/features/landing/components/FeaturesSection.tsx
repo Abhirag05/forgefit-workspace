@@ -6,98 +6,70 @@ interface FeatureItem {
   icon: ComponentType<{ className?: string }>;
   title: string;
   description: string;
-  badge: string;
-  badgeColor: string;
-  accentBorder: string;
 }
 
 const features: FeatureItem[] = [
   {
     id: 'workouts',
     icon: Dumbbell,
-    title: 'Precision Workout Logging',
+    title: 'Workout Tracking',
     description:
-      'Log sets, reps, and weights. Calculates precise calorie expenditure using Metabolic Equivalent of Task (MET) formulas based on your body weight.',
-    badge: 'MET Formula',
-    badgeColor: 'bg-[#ff4d4d]/10 text-[#ff4d4d] border-[#ff4d4d]/20',
-    accentBorder: 'hover:border-[#ff4d4d]/40',
+      'Log sets, repetitions, and weights. Calculates precise calorie expenditure using scientific MET formulas based on your body weight.',
   },
   {
     id: 'nutrition',
     icon: Utensils,
-    title: 'Nutrition & Macro Tracker',
+    title: 'Macro & Nutrition',
     description:
-      'Track calories, protein, carbs, and fats across breakfast, lunch, dinner, and snacks with built-in serving-size calculations.',
-    badge: 'Macro Engine',
-    badgeColor: 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-    accentBorder: 'hover:border-amber-500/40',
+      'Monitor calories, proteins, carbohydrates, and fats across all meals with automatic serving-size scaling.',
   },
   {
     id: 'hydration',
     icon: Droplets,
-    title: 'Smart Hydration Logging',
+    title: 'Hydration Engine',
     description:
-      'Never forget your water intake. Log glass by glass, track daily targets, and unlock daily hydration XP bonuses.',
-    badge: '8 Glasses Daily',
-    badgeColor: 'bg-[#00f0ff]/10 text-[#00f0ff] border-[#00f0ff]/20',
-    accentBorder: 'hover:border-[#00f0ff]/40',
+      'Track daily water intake glass by glass, visualize your daily progress, and maintain consistent hydration habits.',
   },
   {
     id: 'ai-coach',
     icon: Bot,
-    title: 'AI Fitness Coach',
+    title: 'Sensei AI Coach',
     description:
-      'Integrated with Google Gemini AI. Ask questions about workout form, macro splits, or recipe ideas, tailored to your daily logged stats.',
-    badge: 'Gemini AI',
-    badgeColor: 'bg-[#6a00ff]/10 text-[#6a00ff] border-[#6a00ff]/20',
-    accentBorder: 'hover:border-[#6a00ff]/40',
+      'Personalized guidance powered by Gemini AI, answering questions on form, recovery, and meal prep based on your telemetry.',
   },
 ];
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="relative py-20 scroll-mt-16">
+    <section id="features" className="relative py-24 scroll-mt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-[#ff4d4d]">
-            Engineered for Results
+          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+            Core Features
           </h2>
-          <p className="mt-3 text-3xl font-extrabold text-white sm:text-4xl">
-            Everything You Need to Dominate Your Goals
-          </p>
-          <p className="mx-auto mt-4 max-w-2xl text-sm text-zinc-400 sm:text-base">
-            ForgeFit unifies workouts, nutrition, hydration, and artificial intelligence into one unified ecosystem.
+          <p className="mx-auto mt-4 max-w-xl text-sm text-zinc-400 sm:text-base">
+            Everything required to track workouts, nutrition, and personal progression.
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
               <div
                 key={feature.title}
                 id={feature.id}
-                className={`glass-panel group relative flex flex-col justify-between rounded-2xl p-6 transition-all duration-300 scroll-mt-24 ${feature.accentBorder} hover:-translate-y-1`}
+                className="glass-panel group rounded-2xl p-6 transition-all duration-300 hover:border-[#8a2387]/60 hover:-translate-y-1 scroll-mt-24"
               >
-                <div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 border border-white/10 group-hover:scale-105 transition-transform">
-                      <Icon className="h-6 w-6 text-white" />
-                    </div>
-                    <span
-                      className={`rounded-full border px-2.5 py-0.5 text-[11px] font-semibold ${feature.badgeColor}`}
-                    >
-                      {feature.badge}
-                    </span>
-                  </div>
-
-                  <h3 className="mt-5 text-lg font-bold text-white">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-zinc-400 sm:text-sm">
-                    {feature.description}
-                  </p>
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 border border-white/10 group-hover:border-[#ff416c]/40 transition-colors">
+                  <Icon className="h-6 w-6 text-white" />
                 </div>
+                <h3 className="mt-5 text-lg font-bold text-white">
+                  {feature.title}
+                </h3>
+                <p className="mt-2 text-xs leading-relaxed text-zinc-400 sm:text-sm">
+                  {feature.description}
+                </p>
               </div>
             );
           })}
@@ -105,4 +77,4 @@ export function FeaturesSection() {
       </div>
     </section>
   );
-};
+}
