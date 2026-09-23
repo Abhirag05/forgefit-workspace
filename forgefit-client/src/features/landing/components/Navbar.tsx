@@ -8,9 +8,9 @@ interface NavLinkItem {
 
 const NAV_LINKS: readonly NavLinkItem[] = [
   { label: 'Features', href: '#features' },
-  { label: 'Workouts', href: '#workouts' },
-  { label: 'Nutrition', href: '#nutrition' },
-  { label: 'AI Coach', href: '#ai-coach' },
+  { label: 'How It Works', href: '#how-it-works' },
+  { label: 'Contact', href: '#contact' },
+  
 ] as const;
 
 export function Navbar() {
