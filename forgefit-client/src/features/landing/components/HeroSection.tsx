@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, Sparkles, Trophy, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
-export const HeroSection: React.FC = () => {
+export function HeroSection() {
   return (
     <section className="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-28">
       {/* Background Cyber Glow Effects */}

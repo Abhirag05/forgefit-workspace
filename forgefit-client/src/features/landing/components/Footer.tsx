@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flame } from 'lucide-react';
 
-export const Footer: React.FC = () => {
+export function Footer() {
   return (
     <footer className="border-t border-white/5 bg-[#0a0a12] py-12">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 sm:flex-row sm:px-6 lg:px-8">

@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, Flame } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
-export const CtaSection: React.FC = () => {
+export function CtaSection() {
   return (
     <section className="relative py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

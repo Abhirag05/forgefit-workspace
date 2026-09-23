@@ -49,7 +49,7 @@ const features: FeatureItem[] = [
   },
 ];
 
-export const FeaturesSection: React.FC = () => {
+export function FeaturesSection() {
   return (
     <section id="features" className="relative py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
