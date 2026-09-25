@@ -28,18 +28,10 @@ export function TopBar({ onMenuClick }: TopBarProps) {
         </span>
       </div>
 
-      {/* Right: XP Badge, Avatar, and Logout */}
-      <div className="flex items-center gap-3 sm:gap-4">
-        {/* Level & XP Badge */}
-        <div className="flex items-center gap-1.5 rounded-full border border-[#7928ca]/30 bg-[#7928ca]/15 px-3 py-1 text-xs font-semibold text-white shadow-sm shadow-[#7928ca]/20">
-          <Flame className="h-3.5 w-3.5 text-[#ff416c]" />
-          <span>
-            Level {user?.level ?? 1}{' '}
-            <span className="text-zinc-500 font-normal">&bull;</span>{' '}
-            {user?.experience ?? 0} XP
-          </span>
-        </div>
 
+      {/* Right: Avatar, and Logout */}
+      <div className="flex items-center gap-3 sm:gap-4">
+        
         {/* Universal Reusable Avatar Primitive */}
         <Avatar name={user?.fullName} size="md" />
 
