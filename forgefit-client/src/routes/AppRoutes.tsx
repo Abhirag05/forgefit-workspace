@@ -1,9 +1,9 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { PublicLayout } from '@/layouts/PublicLayout';
-import { LandingPage } from '@/pages/LandingPage';
-import { LoginPage } from '@/pages/LoginPage';
-import { RegisterPage } from '@/pages/RegisterPage';
-import { DashboardPage } from '@/pages/DashboardPage';
+import { LandingPage } from '@/pages/public/LandingPage';
+import { LoginPage } from '@/pages/auth/LoginPage';
+import { RegisterPage } from '@/pages/auth/RegisterPage';
+import { DashboardPage } from '@/pages/app/DashboardPage';
 import { ProtectedRoute } from '@/routes/ProtectedRoute';
 
 export function AppRoutes() {
