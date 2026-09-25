@@ -1,9 +1,14 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { PublicLayout } from '@/layouts/PublicLayout';
+import { DashboardLayout } from '@/layouts/DashboardLayout';
 import { LandingPage } from '@/pages/public/LandingPage';
 import { LoginPage } from '@/pages/auth/LoginPage';
 import { RegisterPage } from '@/pages/auth/RegisterPage';
-import { DashboardPage } from '@/pages/app/DashboardPage';
+import { DashboardPage } from '@/pages/user/DashboardPage';
+import { WorkoutsPage } from '@/pages/user/WorkoutsPage';
+import { NutritionPage } from '@/pages/user/NutritionPage';
+import { ChatbotPage } from '@/pages/user/ChatbotPage';
+import { SettingsPage } from '@/pages/user/SettingsPage';
 import { ProtectedRoute } from '@/routes/ProtectedRoute';
 
 export function AppRoutes() {
@@ -18,9 +23,15 @@ export function AppRoutes() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
 
-      {/* Protected Routes (require authentication) */}
+      {/* Protected User Dashboard Routes with App Shell Layout */}
       <Route element={<ProtectedRoute />}>
-        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route element={<DashboardLayout />}>
+          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/workouts" element={<WorkoutsPage />} />
+          <Route path="/nutrition" element={<NutritionPage />} />
+          <Route path="/chatbot" element={<ChatbotPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+        </Route>
       </Route>
 
       {/* Catch-all fallback */}
